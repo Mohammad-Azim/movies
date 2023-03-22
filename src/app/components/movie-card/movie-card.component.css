@@ -1,8 +1,8 @@
 .card {
   transition: box-shadow 0.3s;
-  color: aliceblue;
   max-height: 450px;
   width: fit-content;
+  border-radius: 5px;
 }
 
 .card:hover {
@@ -11,16 +11,13 @@
 
 .cardDetails {
   font-family: "Sofia", sans-serif;
+  padding: 4px;
 }
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 .image {
   border-radius: 5px;
   margin-bottom: 16px;
+  width: 160px;
 }
 
 .cardTitle {
@@ -34,7 +31,7 @@
 .grayText {
   color: gray;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 10px;
 }
 .vote {
   margin-top: 20px;
@@ -43,6 +40,6 @@
   padding: 5px;
   height: fit-content;
   font-weight: 800;
-  font-size: 16px;
+  font-size: 13px;
   color: rgb(207, 206, 206);
 }

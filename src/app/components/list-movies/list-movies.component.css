@@ -1,0 +1,33 @@
+.movieList {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  justify-content: center;
+}
+.cardContainer {
+  margin: 5px;
+}
+
+@media (max-width: 1100px) {
+  .movieList {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media (max-width: 768px) {
+  .movieList {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: 575px) {
+  .movieList {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 415px) {
+  .movieList {
+    grid-template-columns: auto;
+  }
+}

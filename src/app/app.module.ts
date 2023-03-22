@@ -12,6 +12,7 @@ import { SearchComponent } from './components/core/search/search.component';
 import { LogoComponent } from './components/core/logo/logo.component';
 import { NavigationComponent } from './components/core/navigation/navigation.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     NavigationComponent,
     MovieDetailsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, MatIconModule],
   providers: [],
   bootstrap: [AppComponent],
 })
