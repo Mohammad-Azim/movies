@@ -1,0 +1,48 @@
+.card {
+  transition: box-shadow 0.3s;
+  color: aliceblue;
+  max-height: 450px;
+  width: fit-content;
+}
+
+.card:hover {
+  box-shadow: 0 0 11px #fff;
+}
+
+.cardDetails {
+  font-family: "Sofia", sans-serif;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.image {
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-weight: 900;
+}
+
+.innerText > div {
+  height: 30px;
+}
+
+.grayText {
+  color: gray;
+  font-weight: 300;
+  font-size: 14px;
+}
+.vote {
+  margin-top: 20px;
+  background-color: #3d404a;
+  border-radius: 5px;
+  padding: 5px;
+  height: fit-content;
+  font-weight: 800;
+  font-size: 16px;
+  color: rgb(207, 206, 206);
+}
