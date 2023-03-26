@@ -1,7 +1,12 @@
 <div class="search">
   <div class="container">
-    <form>
-      <input type="search" placeholder="Search..." />
+    <form (ngSubmit)="onSearch()">
+      <input
+        [(ngModel)]="searchTerm"
+        name="searchTerm"
+        type="search"
+        placeholder="Search..."
+      />
       <button type="submit"></button>
     </form>
   </div>

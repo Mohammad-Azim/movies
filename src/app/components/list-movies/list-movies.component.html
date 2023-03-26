@@ -1,41 +1,24 @@
 <div class="movieList">
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
+  <!-- remove the ? after moviesPage? and see the console #??#  -->
+  <div
+    *ngFor="
+      let card of moviesPage?.results || []
+        | paginate
+          : {
+              itemsPerPage: 20,
+              currentPage: pagination,
+              totalItems: allMovies
+            }
+    "
+    class="cardContainer"
+  >
+    <app-movie-card [movieCard]="card"></app-movie-card>
   </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
-  <div class="cardContainer">
-    <app-movie-card></app-movie-card>
-  </div>
+</div>
+<div class="d-flex justify-content-center pagination">
+  <pagination-controls
+    [responsive]="true"
+    class="paginationPages"
+    (pageChange)="renderPage($event)"
+  ></pagination-controls>
 </div>

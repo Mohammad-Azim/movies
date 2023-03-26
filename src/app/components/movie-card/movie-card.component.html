@@ -2,17 +2,17 @@
   <div>
     <img
       class="image"
-      src="https://www.themoviedb.org/t/p/w220_and_h330_face/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg"
+      src="{{ imageCard + movieCard.poster_path }}"
       alt="movie"
     />
   </div>
   <div class="cardDetails">
-    <div class="cardTitle">Dance With Me</div>
+    <div class="cardTitle">{{ movieCard.title }}</div>
     <div class="flexBetween">
       <div>
         <div class="innerText grayText">
           <div class="flexBetween">
-            <p>1999</p>
+            <p>{{ movieCard.release_date }}</p>
             <p>1 hr 6min</p>
           </div>
           <div class="flexBetween">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="vote grayText">6.5</div>
+      <div class="vote grayText">{{ movieCard.vote_average?.toFixed(1) }}</div>
     </div>
   </div>
 </div>

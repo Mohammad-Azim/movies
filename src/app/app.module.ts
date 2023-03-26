@@ -13,6 +13,9 @@ import { LogoComponent } from './components/core/logo/logo.component';
 import { NavigationComponent } from './components/core/navigation/navigation.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,14 @@ import { MatIconModule } from '@angular/material/icon';
     NavigationComponent,
     MovieDetailsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatIconModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatIconModule,
+    HttpClientModule,
+    NgxPaginationModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

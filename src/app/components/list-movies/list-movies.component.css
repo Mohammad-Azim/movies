@@ -31,3 +31,35 @@
     grid-template-columns: auto;
   }
 }
+
+.pagination {
+  background-color: gray;
+  margin: auto;
+  width: fit-content;
+}
+::ng-deep ul {
+  padding: 0px;
+}
+::ng-deep ul > li:not(.active) > a {
+  background-color: rgb(158, 153, 153) !important;
+  border-color: rgb(226, 223, 223) !important;
+}
+
+::ng-deep ul > li > a {
+  background-color: rgb(158, 153, 153) !important;
+  border-color: rgb(230, 221, 221) !important;
+  color: white !important;
+}
+
+::ng-deep ul > li.disabled > span {
+  border-color: black !important;
+}
+
+::ng-deep ul > li.active > a {
+  background-color: rgb(1, 12, 1) !important;
+  border-color: rgb(41, 40, 40) !important;
+}
+
+::ng-deep ul > li.current {
+  background-color: rgb(87, 86, 86) !important;
+}
