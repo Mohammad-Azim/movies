@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  min-height: 100vh;
 }
 .containerApp {
   max-width: 1100px;

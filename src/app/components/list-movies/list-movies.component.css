@@ -1,3 +1,7 @@
+.category {
+  margin: auto;
+  color: white;
+}
 .movieList {
   background-color: black;
   display: grid;
@@ -11,6 +15,13 @@
 @media (max-width: 1100px) {
   .movieList {
     grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media (max-width: 900px) {
+  .category {
+    margin: auto;
+    width: 80%;
   }
 }
 

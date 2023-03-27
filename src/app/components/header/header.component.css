@@ -56,11 +56,6 @@
   .header {
     margin: auto;
   }
-
-  .category {
-    margin: auto;
-    width: 80%;
-  }
 }
 
 @media (max-width: 575px) {

@@ -1,1 +1,55 @@
-<p>movie-details works!</p>
+<div class="movieDetail">
+  <div class="backGroundImage">
+    <img
+      src="{{ backGroundImageUrl + movie.backdrop_path }}"
+      class="backImage"
+      alt=""
+    />
+    <div class="imageGradient">
+      <div class="movieInfo">
+        <div class="image">
+          <img
+            class="cardImage"
+            src="{{ imageCardUrl + movie.poster_path }}"
+            alt=""
+          />
+        </div>
+        <div class="details">
+          <div class="top">
+            <h1 class="title">{{ movie.title }}</h1>
+            <div class="top-detail">
+              <div class="BlueCircleRate">
+                <div class="centerDivRate">
+                  {{ movie.vote_average!.toFixed(2) }}
+                </div>
+              </div>
+              <div class="BlueCircle">
+                <mat-icon class="centerDiv">favorite</mat-icon>
+              </div>
+              <div class="BlueCircle">
+                <mat-icon class="centerDiv">list</mat-icon>
+              </div>
+
+              <div class="BlueCircle">
+                <mat-icon class="centerDiv">bookmark_border</mat-icon>
+              </div>
+              <div class="BlueCircle">
+                <mat-icon class="centerDiv">star</mat-icon>
+              </div>
+              <div class="playTrailer">
+                <mat-icon class="playCircle">play_circle</mat-icon> play Trailer
+              </div>
+            </div>
+          </div>
+
+          <div class="overView">
+            <div class="overViewTitle">Over View</div>
+            <div class="overViewContent">
+              {{ movie.overview }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
