@@ -1,4 +1,4 @@
-<div class="movieDetail">
+<div *ngIf="movie" class="movieDetail">
   <div class="backGroundImage">
     <img
       src="{{ backGroundImageUrl + movie.backdrop_path }}"

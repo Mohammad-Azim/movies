@@ -1,21 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NavigationComponent } from './navigation.component';
 
 describe('NavigationComponent', () => {
-  let component: NavigationComponent;
-  let fixture: ComponentFixture<NavigationComponent>;
+  let component = new NavigationComponent();
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ NavigationComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(NavigationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach(async () => {});
 
   it('should create', () => {
     expect(component).toBeTruthy();

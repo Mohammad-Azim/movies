@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Subscriber, Subscription } from 'rxjs';
 import { MoviesPage } from 'src/app/Model/MoviesPage';
 import { MoviesService } from 'src/app/services/movies/movies.service';
 
@@ -16,6 +15,21 @@ export class ListMoviesComponent {
 
   constructor(public movieService: MoviesService) {}
 
+  /**
+   * on init will open a subscription to active when user search on something
+   * then will fetch movies
+   */
+  ngOnInit() {
+    this.fetchMoviesOnSearchWithSubscribe();
+    this.fetchMoviesWithoutSearch();
+  }
+
+  /**
+   * if there is no search term then will call fetchMoviesWithoutSearch
+   *  else will call fetchMoviesOnSearch ( that mean the user is searching)
+   *
+   * this method will been
+   */
   fetchMovies() {
     if (this.searchTerm.length < 1) {
       this.fetchMoviesWithoutSearch();
@@ -24,18 +38,19 @@ export class ListMoviesComponent {
     }
   }
 
+  /**
+   *
+   * @param event the number of the page
+   * this method will invoke each time user navigate to another page
+   * and it will call fetchMovies method
+   */
   renderPage(event: number) {
     this.pagination = event;
     this.fetchMovies();
   }
 
-  ngOnInit() {
-    this.fetchMoviesOnSearchWithSubscribe();
-    this.fetchMoviesWithoutSearch();
-  }
-
-  private fetchMoviesOnSearchWithSubscribe() {
-    this.movieService.searchSubject.subscribe((searchTerm) => {
+  fetchMoviesOnSearchWithSubscribe() {
+    this.movieService.searchSubject!.subscribe((searchTerm) => {
       this.searchTerm = searchTerm;
       this.pagination = 1;
       this.movieService
@@ -49,7 +64,7 @@ export class ListMoviesComponent {
     });
   }
 
-  private fetchMoviesOnSearch() {
+  fetchMoviesOnSearch() {
     this.movieService
       .getMoviesByQuery(this.pagination, this.searchTerm)
       .subscribe((page) => {
@@ -58,8 +73,7 @@ export class ListMoviesComponent {
       });
   }
 
-  private fetchMoviesWithoutSearch() {
-    this.searchTerm = '';
+  fetchMoviesWithoutSearch() {
     this.movieService.getMovies(this.pagination).subscribe((page) => {
       this.moviesPage = page;
       this.allMovies = page.total_results;

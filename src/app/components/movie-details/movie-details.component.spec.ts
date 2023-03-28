@@ -1,23 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import Spy = jasmine.Spy;
+import { ActivatedRoute } from '@angular/router';
+import { MoviesServiceMock } from 'src/app/services/movies/mock.movies';
 
 import { MovieDetailsComponent } from './movie-details.component';
+import { of } from 'rxjs';
 
 describe('MovieDetailsComponent', () => {
-  let component: MovieDetailsComponent;
-  let fixture: ComponentFixture<MovieDetailsComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MovieDetailsComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(MovieDetailsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  let route = {
+    params: of({ id: 26 }),
+  };
+  let component = new MovieDetailsComponent(
+    MoviesServiceMock(),
+    route as unknown as ActivatedRoute
+  );
+  beforeEach(async () => {});
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('ngOnInit', () => {
+    it('should  call getMovieById', () => {
+      component.ngOnInit();
+      expect(component.movieService.getMovieById).toHaveBeenCalledWith(26);
+    });
   });
 });

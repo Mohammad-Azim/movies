@@ -10,7 +10,6 @@ import { Movie } from 'src/app/Model/SingleMovieTypes';
 })
 export class MoviesService {
   constructor(public http: HttpClient) {}
-
   searchSubject = new Subject<string>();
 
   /**

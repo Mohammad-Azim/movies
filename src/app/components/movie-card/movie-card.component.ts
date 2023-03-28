@@ -9,9 +9,5 @@ import { MovieCard } from './../../Model/MovieCard';
 })
 export class MovieCardComponent {
   @Input() movieCard!: MovieCard;
-  imageCard: string;
-
-  constructor() {
-    this.imageCard = ImageCard;
-  }
+  imageCard: string = ImageCard;
 }

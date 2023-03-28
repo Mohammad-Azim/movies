@@ -1,23 +1,26 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MoviesServiceMock } from 'src/app/services/movies/mock.movies';
 
 import { SearchComponent } from './search.component';
 
 describe('SearchComponent', () => {
-  let component: SearchComponent;
-  let fixture: ComponentFixture<SearchComponent>;
+  let component = new SearchComponent(MoviesServiceMock());
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(SearchComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component.searchTerm = 'avenger';
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('onSearch', () => {
+    it('should invoke searchSubject', () => {
+      spyOn(component.moviesService.searchSubject, 'next');
+      component.onSearch();
+      expect(component.moviesService.searchSubject.next).toHaveBeenCalledWith(
+        component.searchTerm!
+      );
+    });
   });
 });

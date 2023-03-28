@@ -12,18 +12,18 @@ import { MoviesService } from 'src/app/services/movies/movies.service';
 export class MovieDetailsComponent implements OnInit {
   @Input() Id!: number;
   movie!: Movie;
-  imageCardUrl!: string;
-  backGroundImageUrl!: string;
+  imageCardUrl: string = ImageCard;
+  backGroundImageUrl: string = BackGroundImage;
   poster_pathUrl?: string;
 
   constructor(
     public movieService: MoviesService,
-    private route: ActivatedRoute
-  ) {
-    this.imageCardUrl = ImageCard;
-    this.backGroundImageUrl = BackGroundImage;
-  }
+    public route: ActivatedRoute
+  ) {}
 
+  /**
+   * on Initialize will get one move by id and will get id from the router
+   */
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.movieService.getMovieById(params['id']).subscribe((movie) => {
